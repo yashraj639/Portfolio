@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fafafa;
+  --foreground: #111111;
+  --muted: #5f5f5f;
+  --line: rgba(17, 17, 17, 0.12);
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --selection: rgba(17, 17, 17, 0.14);
+  --mono: #111111;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #020202;
+  --foreground: #f5f5f5;
+  --muted: #8b8b8b;
+  --line: rgba(255, 255, 255, 0.1);
+  --surface: rgba(10, 10, 10, 0.84);
+  --surface-strong: rgba(16, 16, 16, 0.96);
+  --selection: rgba(255, 255, 255, 0.18);
+  --mono: #f5f5f5;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+::selection {
+  background: var(--selection);
+  color: var(--foreground);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.copy {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.8rem;
+  font-family: var(--font-manrope);
+}
+
+.copy strong {
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-family: var(--font-funnel);
+}
+
+.divider {
+  background: var(--line);
+  height: 1px;
+  width: 100%;
+}
+
+.site-shell {
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--foreground) 4%, transparent), transparent 28%),
+    var(--background);
+}
+
+.nav-shell {
+  background: var(--surface);
+  border-color: var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.theme-button {
+  background: var(--surface-strong);
+  border-color: var(--line);
+  color: var(--foreground);
+}
+
+.muted-text {
+  color: var(--muted);
+}
+
+.line-border {
+  border-color: var(--line);
+}
+
+/* Disable default crossfade */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/* Ripple reveal */
+::view-transition-new(root) {
+  clip-path: circle(0% at var(--x, 50%) var(--y, 50%));
+  animation: ripple-reveal 1000ms ease forwards;
+}
+
+/* Old state stays behind */
+::view-transition-old(root) {
+  z-index: -1;
+}
+
+@keyframes ripple-reveal {
+  to {
+    clip-path: circle(150% at var(--x, 50%) var(--y, 50%));
+  }
+}
