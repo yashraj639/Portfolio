@@ -5,10 +5,11 @@ import Link from "next/link";
 
 const contactLinks = [
   {
-    label: "X",
-    href: "https://x.com/Yashraj_codes",
-    value: "@Yashraj_codes",
-  },{
+    label: "Resume",
+    href: "/resume.pdf",
+    value: "Download PDF",
+  },
+  {
     label: "Email",
     href: "mailto:yashrajyadav4660@gmail.com",
     value: "yashrajyadav4660@gmail.com",
@@ -33,7 +34,7 @@ export default function Home() {
         <div className="mx-auto max-w-[700px]">
           <section className="space-y-6">
             <div className="flex flex-col gap-6">
-              <h1 className="text-4xl font-medium tracking-tight text-[var(--foreground)] sm:text-5xl font-[family-name:var(--font-funnel)]">
+              <h1 className="text-4xl font-medium tracking-tight text-(--foreground) sm:text-5xl font-(family-name:--font-funnel)">
                 <Highlight
                   type="underline"
                   strokeWidth={1.5}
@@ -43,7 +44,7 @@ export default function Home() {
                   Yashraj Yadav
                 </Highlight>
               </h1>
-              <span className="text-sm text-[var(--muted)] font-[family-name:var(--font-mono)]">
+              <span className="text-sm text-(--muted) font-mono">
                 full-stack developer /{" "}
                 <Typewriter
                   texts={[
@@ -93,10 +94,10 @@ export default function Home() {
             </p>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 text-sm text-[var(--foreground)] transition-opacity hover:opacity-70"
+              className="inline-flex items-center gap-2 text-sm text-(--foreground) transition-opacity hover:opacity-70"
             >
               <div className="flex flex-col gap-6">
-                <p className="font-medium tracking-tight text-sm sm:text-xl font-[family-name:var(--font-funnel)]">
+                <p className="font-medium tracking-tight text-sm sm:text-xl font-(family-name:--font-funnel)">
                   <Highlight
                     type="underline"
                     strokeWidth={1.5}
@@ -116,14 +117,15 @@ export default function Home() {
             <p className="eyebrow">Contact</p>
             <div className="space-y-3">
               {contactLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group block w-fit text-base leading-7 text-[var(--foreground)] transition-colors hover:opacity-70"
-                >
-                  <span className="mr-3 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[0.22em] text-[var(--muted)] transition-colors group-hover:text-[var(--muted)]">
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+                    download={link.label === "Resume" ? true : undefined}
+                    className="group block w-fit text-base leading-7 text-(--foreground) transition-colors hover:opacity-70"
+                  >
+                  <span className="mr-3 font-mono text-xs uppercase tracking-[0.22em] text-(--muted) transition-colors group-hover:text-(--muted)">
                     {link.label}
                   </span>
                   <span>{link.value}</span>
@@ -133,7 +135,7 @@ export default function Home() {
           </section>
 
           <div className="line-border mt-16 space-y-2 border-t pt-6">
-            <p className="text-sm text-[var(--muted)]">
+            <p className="text-sm text-(--muted)">
               Based in India. Open to work.
             </p>
           </div>

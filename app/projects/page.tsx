@@ -3,14 +3,13 @@
 import { motion } from "motion/react";
 import { Navbar } from "@/components/navbar";
 import { ProjectCard, Project } from "@/components/project-card";
-import { Highlight } from "@/components/highlight";
 
 const projects: Project[] = [
   {
     title: "Zeno Bank",
     date: "2026",
     description:
-      "A production-grade full-stack banking ledger built with Next.js, PostgreSQL, and Drizzle ORM. Implements real double-entry bookkeeping principles with atomic transactions, idempotency, and a full audit trail — complete with a Neobrutalist frontend UI",
+      "A production-grade full-stack banking ledger built with Next.js, PostgreSQL, and Drizzle ORM. Implements real double-entry bookkeeping principles with atomic transactions, idempotency, and a full audit trail complete with a Neobrutalist frontend UI",
     tags: ["TypeScript", "Next.js", "PostgreSQL", "Drizzle ORM"],
     liveUrl: "https://banking-ledger.vercel.app",
     githubUrl: "https://github.com/yashraj639/Banking-Ledger",
@@ -73,17 +72,17 @@ export default function ProjectsPage() {
           <motion.div
             initial="hidden"
             animate="show"
-            className="overflow-hidden border border-[var(--line)]"
+            className="overflow-hidden border border-(--line)"
           >
-            <div className="px-3 py-6">
+            <div className="px-3 py-8">
               <motion.div variants={headerItem} className="mb-3">
-               <h1 className="text-4xl font-medium tracking-tight text-[var(--foreground)] sm:text-5xl font-[family-name:var(--font-funnel)]">
+               <h1 className="text-4xl font-medium tracking-tight text-(--foreground) sm:text-5xl font-(family-name:--font-funnel)">
                 Projects
                 </h1>
             </motion.div>
 
             <motion.div variants={headerItem}>
-              <p className="max-w-[640px] text-[0.95rem] leading-7 text-[var(--muted)]">
+              <p className="max-w-[640px] text-[0.95rem] leading-7 text-(--muted)">
                 Selected systems and tools, written up with a little more
                 structure and less noise.
               </p>

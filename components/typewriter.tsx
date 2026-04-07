@@ -46,7 +46,7 @@ export function Typewriter({ texts, speed = 80, pause = 1500 }: TypewriterProps)
   }, [charPos, deleting, index, texts, speed, pause]);
 
   return (
-    <span className="inline-flex items-center font-[family-name:var(--font-mono)] text-sm text-[var(--muted)]">
+    <span className="inline-flex items-center font-mono text-sm text-(--muted)">
       {display}
       <span className="border-r-2 border-current animate-pulse ml-0.5" aria-hidden="true" />
     </span>

@@ -1,5 +1,6 @@
 "use client";
 
+import { MoveUpRight } from "lucide-react";
 import { motion } from "motion/react";
 
 export interface Project {
@@ -27,19 +28,19 @@ export function ProjectCard({ project }: { project: Project }) {
   return (
     <motion.div
       variants={item}
-      className="group border-b border-[var(--line)] bg-transparent px-3 py-6 last:border-b-0 sm:px-4"
+      className="group border-b border-(--line) bg-transparent px-3 py-6 last:border-b-0 sm:px-4"
     >
       <div className="space-y-4">
         <div className="flex items-baseline justify-between gap-3">
-          <h3 className="text-[1.1rem] font-semibold tracking-tight text-[var(--foreground)]">
+          <h3 className="text-[1.1rem] font-semibold tracking-tight text-(--foreground)">
             {project.title}
           </h3>
-          <span className="shrink-0 font-[family-name:var(--font-mono)] text-[11px] uppercase tracking-[0.12em] text-[var(--muted)]">
+          <span className="shrink-0 font-mono text-[11px] uppercase tracking-[0.12em] text-(--muted)">
             {project.date}
           </span>
         </div>
 
-        <p className="max-w-[38rem] text-[0.9rem] leading-8 text-[var(--muted)]">
+        <p className="max-w-152 text-[0.9rem] leading-8 text-(--muted)">
           {project.description}
         </p>
 
@@ -47,23 +48,25 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-none border border-[var(--line)] px-2.5 py-1 font-[family-name:var(--font-mono)] text-[11px] text-[var(--muted)]"
+              className="rounded-none border border-(--line) px-2.5 py-1 font-mono text-[11px] text-(--muted)"
             >
               {tag}
             </span>
           ))}
         </div>
 
-        <div className="flex items-center gap-5 pt-1 text-[13px] text-[var(--muted)]">
+        <div className="flex items-center gap-5 pt-1 text-[13px] text-(--muted)">
           {project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--foreground)]"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-(--foreground)"
             >
               demo
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <MoveUpRight size={12} />
+              </span>
             </a>
           )}
 
@@ -72,10 +75,12 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.githubUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--foreground)]"
+              className="inline-flex items-center gap-1.5 transition-colors hover:text-(--foreground)"
             >
               GitHub
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <MoveUpRight size={12} />
+              </span>
             </a>
           )}
 

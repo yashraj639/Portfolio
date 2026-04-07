@@ -28,7 +28,7 @@ export function Navbar() {
       <div className="nav-shell flex w-full max-w-[700px] items-center justify-between rounded-none border-b px-0 py-0 sm:rounded-none sm:border-x-0 sm:border-t-0">
         <Link
           href="/"
-          className="px-2 py-3 font-[family-name:var(--font-funnel)] text-sm font-medium tracking-tight text-[var(--foreground)]"
+          className="px-2 py-3 font-(family-name:--font-funnel) text-sm font-medium tracking-tight text-(--foreground)"
         >
           YY
         </Link>
@@ -49,8 +49,8 @@ export function Navbar() {
                     }}
                     className={`rounded-md px-3 py-2 text-[13px] transition-colors ${
                       isActive
-                        ? "text-[var(--foreground)]"
-                        : "muted-text hover:text-[var(--foreground)]"
+                        ? "text-(--foreground)"
+                        : "muted-text hover:text-(--foreground)"
                     }`}
                   >
                     {link.label}
@@ -65,8 +65,8 @@ export function Navbar() {
                     href={link.href}
                     className={`rounded-md px-3 py-2 text-[13px] transition-colors ${
                       isActive
-                        ? "text-[var(--foreground)]"
-                        : "muted-text hover:text-[var(--foreground)]"
+                        ? "text-(--foreground)"
+                        : "muted-text hover:text-(--foreground)"
                     }`}
                   >
                     {link.label}
@@ -78,7 +78,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="muted-text rounded-md px-3 py-2 text-[13px] transition-colors hover:text-[var(--foreground)]"
+                  className="muted-text rounded-md px-3 py-2 text-[13px] transition-colors hover:text-(--foreground)"
                 >
                   {link.label}
                 </a>

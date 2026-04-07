@@ -37,7 +37,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(manrope.variable, funnelDisplay.variable)}
     >
-      <body className="min-h-screen font-[family-name:var(--font-manrope)]">
+      <body className="min-h-screen font-(family-name:--font-manrope)">
         <ThemeProvider
           attribute="data-theme"
           defaultTheme="system"
