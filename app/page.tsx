@@ -2,6 +2,7 @@ import { Navbar } from "@/components/navbar";
 import { Typewriter } from "@/components/typewriter";
 import { Highlight } from "@/components/highlight";
 import Link from "next/link";
+import Image from "next/image";
 
 const contactLinks = [
   {
@@ -33,32 +34,47 @@ export default function Home() {
       <div className="px-6 py-16 pt-28 sm:px-8 sm:py-24 sm:pt-32">
         <div className="mx-auto max-w-[700px]">
           <section className="space-y-6">
-            <div className="flex flex-col gap-6">
-              <h1 className="text-4xl font-medium tracking-tight text-(--foreground) sm:text-5xl font-(family-name:--font-funnel)">
-                <Highlight
-                  type="underline"
-                  strokeWidth={1.5}
-                  color="var(--muted)"
-                  padding={4}
-                >
-                  Yashraj Yadav
-                </Highlight>
-              </h1>
-              <span className="text-sm text-(--muted) font-mono">
-                full-stack developer /{" "}
-                <Typewriter
-                  texts={[
-                    "India",
-                    "building systems",
-                    "creating code",
-                  ]}
-                />
-              </span>
-              <p className="copy">
-                I build production software with TypeScript, Next.js, Node.js,
-                and PostgreSQL, with most of the attention going into the parts
-                that break when the rules are loose.
-              </p>
+            <div className="flex flex-col gap-8 md:flex-row md:items-center md:gap-10">
+              <div className="w-fit rounded-[1.75rem] border border-(--line) bg-(--surface) p-2.5">
+                <div className="overflow-hidden rounded-[1.25rem] border border-(--line) bg-(--surface-strong)">
+                  <Image
+                    src="/pfp.png"
+                    alt="Yashraj Yadav"
+                    width={180}
+                    height={180}
+                    priority
+                    className="h-40 w-40 object-cover sm:h-44 sm:w-44"
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-1 flex-col gap-6">
+                <h1 className="text-4xl font-medium tracking-tight text-(--foreground) sm:text-5xl font-(family-name:--font-funnel)">
+                  <Highlight
+                    type="underline"
+                    strokeWidth={1.5}
+                    color="var(--muted)"
+                    padding={4}
+                  >
+                    Yashraj Yadav
+                  </Highlight>
+                </h1>
+                <span className="text-sm text-(--muted) font-mono">
+                  full-stack developer /{" "}
+                  <Typewriter
+                    texts={[
+                      "India",
+                      "building systems",
+                      "creating code",
+                    ]}
+                  />
+                </span>
+                <p className="copy">
+                  I build production software with TypeScript, Next.js, Node.js,
+                  and PostgreSQL, with most of the attention going into the
+                  parts that break when the rules are loose.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -104,7 +120,7 @@ export default function Home() {
                     color="var(--muted)"
                     padding={4}
                   >
-                    Projects
+                    View Projects
                   </Highlight>
                 </p>                
               </div>
