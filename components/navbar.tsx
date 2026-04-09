@@ -19,12 +19,7 @@ export function Navbar() {
   const [playProjects] = useSound(beltHandle2Sound);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }}
-      className="fixed left-0 right-0 top-0 z-50 flex items-center justify-center px-4 py-4"
-    >
+    <motion.nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-center px-4 py-4">
       <div className="nav-shell flex w-full max-w-[700px] items-center justify-between rounded-none border-b px-0 py-0 sm:rounded-none sm:border-x-0 sm:border-t-0">
         <Link
           href="/"

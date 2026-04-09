@@ -76,7 +76,11 @@ body {
 
 .site-shell {
   background:
-    radial-gradient(circle at top, color-mix(in srgb, var(--foreground) 4%, transparent), transparent 28%),
+    radial-gradient(
+      circle at top,
+      color-mix(in srgb, var(--foreground) 4%, transparent),
+      transparent 28%
+    ),
     var(--background);
 }
 

@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "motion/react";
 import { Navbar } from "@/components/navbar";
 import { ProjectCard, Project } from "@/components/project-card";
+import { ProjectsList } from "./projects-list";
 
 const projects: Project[] = [
   {
@@ -69,32 +67,7 @@ export default function ProjectsPage() {
       <Navbar />
       <div className="px-3 pb-20 pt-28 sm:px-8 sm:pt-32">
         <div className="mx-auto max-w-[700px]">
-          <motion.div
-            initial="hidden"
-            animate="show"
-            className="overflow-hidden border border-(--line)"
-          >
-            <div className="px-3 py-8">
-              <motion.div variants={headerItem} className="mb-3">
-               <h1 className="text-4xl font-medium tracking-tight text-(--foreground) sm:text-5xl font-(family-name:--font-funnel)">
-                Projects
-                </h1>
-            </motion.div>
-
-            <motion.div variants={headerItem}>
-              <p className="max-w-[640px] text-[0.95rem] leading-7 text-(--muted)">
-                Selected systems and tools, written up with a little more
-                structure and less noise.
-              </p>
-            </motion.div>
-            </div>
-
-            <motion.div variants={headerItem} className="my-10 divider" />
-
-            {projects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </motion.div>
+          <ProjectsList projects={projects} />
         </div>
       </div>
     </div>
