@@ -14,7 +14,7 @@ import { Pill } from "@/components/pill";
 const contactLinks = [
   {
     label: "Resume",
-    href: "/resume.pdf",
+    href: "/Yashraj-Yadav-Resume.pdf",
     value: "Download PDF",
   },
   {

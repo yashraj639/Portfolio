@@ -13,6 +13,15 @@ const projects: Project[] = [
     githubUrl: "https://github.com/yashraj639/Banking-Ledger",
   },
   {
+    title: "Private Rooms — Ephemeral Chat",
+    date: "2026",
+    description:
+      "A real-time chat system built with WebSockets for low-latency messaging (<100ms). Features an ephemeral architecture with automatic room deletion and anonymous 4-digit room codes.",
+    tags: ["Next.js", "TypeScript", "Socket.io", "WebSockets"],
+    liveUrl: "https://chat.yashrj.xyz",
+    githubUrl: "https://github.com/yashraj639/Private-Rooms",
+  },
+  {
     title: "Agentforce Marketing",
     date: "2025",
     description:
@@ -21,7 +30,7 @@ const projects: Project[] = [
     liveUrl: "https://agentforce-rho.vercel.app/",
     githubUrl: "https://github.com/yashraj639/Agentforce-Marketing",
   },
-   {
+  {
     title: "Second Brain",
     date: "2025",
     description:
@@ -31,21 +40,22 @@ const projects: Project[] = [
     githubUrl: "https://github.com/yashraj639/Second-Brain-App",
   },
   {
-    title: "Prompt-Jacker",
+    title: "SQL AI Agent",
     date: "2026",
     description:
-      "Prompt-Jacker is a sophisticated reverse-engineering tool that deconstructs images into optimized prompts for AI generation. Whether you're stealing the lighting from a cinematic shot or the layout from a top-tier SaaS dashboard, Prompt-Jacker extracts the DNA of any visual and turns it into a reusable prompt.",
-    tags: ["TypeScript", "Next.js", "Gemini API", "Tailwind CSS"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/yashraj639/Prompt-Jacker",
+      "A natural language to SQL engine with real-time query execution and schema-aware prompt pipelines. Reduces manual query effort by 80% and includes safety guardrails.",
+    tags: ["Next.js", "TypeScript", "Gemini API", "SQLite"],
+    liveUrl: "https://sql-agent-vert-six.vercel.app",
+    githubUrl: "https://github.com/yashraj639/SQL-Agent",
   },
   {
-    title: "Simplify",
-    date: "2025",
+    title: "Foliokit",
+    date: "2026",
     description:
-      "A powerful Chrome extension that transforms complex web content into easy-to-understand explanations using Google's Gemini AI. Whether you're reading technical articles, research papers, or dense blog posts, Simplify makes comprehension effortless.",
-    tags: ["Chrome Extension", "TypeScript", "Gemini API"],
-    githubUrl: "https://github.com/yashraj639/Simplify",
+      "A portfolio template platform with structured design systems and interactive UI components. Offers downloadable starter kits that reduce portfolio setup time by 70%.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://foliokit-delta.vercel.app",
+    githubUrl: "https://github.com/yashraj639/Foliokit",
   },
 ];
 
