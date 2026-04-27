@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/navbar";
-import { ProjectCard, Project } from "@/components/project-card";
+import { Project } from "@/components/project-card";
 import { ProjectsList } from "./projects-list";
 
 const projects: Project[] = [
@@ -13,22 +13,13 @@ const projects: Project[] = [
     githubUrl: "https://github.com/yashraj639/Banking-Ledger",
   },
   {
-    title: "Private Rooms — Ephemeral Chat",
+    title: "Private Rooms",
     date: "2026",
     description:
       "A real-time chat system built with WebSockets for low-latency messaging (<100ms). Features an ephemeral architecture with automatic room deletion and anonymous 4-digit room codes.",
     tags: ["Next.js", "TypeScript", "Socket.io", "WebSockets"],
     liveUrl: "https://chat.yashrj.xyz",
     githubUrl: "https://github.com/yashraj639/Private-Rooms",
-  },
-  {
-    title: "Agentforce Marketing",
-    date: "2025",
-    description:
-      "A modern, animated marketing landing page built with Next.js 16, Tailwind CSS v4, and Framer Motion.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://agentforce-rho.vercel.app/",
-    githubUrl: "https://github.com/yashraj639/Agentforce-Marketing",
   },
   {
     title: "Second Brain",
@@ -38,6 +29,15 @@ const projects: Project[] = [
     tags: ["React", "Node.js", "TypeScript", "MongoDB", "Express"],
     liveUrl: "https://secondbrain.yashrj.xyz",
     githubUrl: "https://github.com/yashraj639/Second-Brain-App",
+  },
+  {
+    title: "Agentforce Marketing",
+    date: "2025",
+    description:
+      "A modern, animated marketing landing page built with Next.js 16, Tailwind CSS v4, and Framer Motion.",
+    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://agentforce-rho.vercel.app/",
+    githubUrl: "https://github.com/yashraj639/Agentforce-Marketing",
   },
   {
     title: "SQL AI Agent",
@@ -58,18 +58,6 @@ const projects: Project[] = [
     githubUrl: "https://github.com/yashraj639/Foliokit",
   },
 ];
-
-const headerItem = {
-  hidden: { opacity: 0, y: 18 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.55,
-      ease: [0.22, 1, 0.36, 1] as const,
-    },
-  },
-};
 
 export default function ProjectsPage() {
   return (

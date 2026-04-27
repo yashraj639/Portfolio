@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { useSound } from "@/hooks/use-sound";
-import { beltHandle2Sound } from "@/lib/belt-handle-2";
+import { successChime } from "@/hooks/use-sound";
 
 const navLinks = [
   { label: "home", href: "/" },
@@ -16,7 +15,6 @@ const navLinks = [
 export function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
-  const [playProjects] = useSound(beltHandle2Sound);
 
   return (
     <motion.nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-center px-4 py-4">
@@ -39,7 +37,7 @@ export function Navbar() {
                   <button
                     key={link.href}
                     onClick={() => {
-                      playProjects();
+                      successChime();
                       router.push(link.href);
                     }}
                     className={`rounded-md px-3 py-2 text-[13px] transition-colors ${
@@ -58,6 +56,7 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    onClick={() => successChime()}
                     className={`rounded-md px-3 py-2 text-[13px] transition-colors ${
                       isActive
                         ? "text-(--foreground)"
@@ -73,6 +72,7 @@ export function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={() => successChime()}
                   className="muted-text rounded-md px-3 py-2 text-[13px] transition-colors hover:text-(--foreground)"
                 >
                   {link.label}

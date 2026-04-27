@@ -3,6 +3,7 @@ import { Funnel_Display, Manrope } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { GlobalClickSound } from "@/components/global-click-sound";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -43,6 +44,7 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
         >
+          <GlobalClickSound />
           {children}
         </ThemeProvider>
       </body>

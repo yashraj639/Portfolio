@@ -6,6 +6,7 @@ import { useSound } from "@/hooks/use-sound";
 import { Moon, Sun } from "lucide-react";
 
 import { beltHandle1Sound } from "@/lib/belt-handle-1";
+import { AnimatePresence, motion } from "motion/react";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -18,7 +19,7 @@ export function ThemeToggle() {
 
   if (!mounted) return null;
 
-  function toggleTheme(e: React.MouseEvent<HTMLButtonElement>) {
+  const toggleTheme = (e: React.MouseEvent) => {
     const x = e.clientX;
     const y = e.clientY;
 
@@ -37,20 +38,31 @@ export function ThemeToggle() {
     }
 
     document.startViewTransition(switchTheme);
-  }
+  };
 
   return (
     <button
-      type="button"
       onClick={toggleTheme}
-      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      className="theme-button flex h-9 w-9 items-center justify-center rounded-md border transition-colors"
+      className="theme-button flex h-9 w-9 items-center justify-center rounded-md border transition-colors relative overflow-hidden group"
+      aria-label="Toggle theme"
     >
-      {theme === "dark" ? (
-        <Sun className="h-4 w-4" />
-      ) : (
-        <Moon className="h-4 w-4" />
-      )}
+      <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={theme}
+          initial={{ y: 12, opacity: 0, rotate: -45 }}
+          animate={{ y: 0, opacity: 1, rotate: 0 }}
+          exit={{ y: -12, opacity: 0, rotate: 45 }}
+          transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          className="relative z-10"
+        >
+          {theme === "light" ? (
+            <Moon size={16} className="fill-current" />
+          ) : (
+            <Sun size={16} className="fill-current" />
+          )}
+        </motion.div>
+      </AnimatePresence>
     </button>
   );
 }

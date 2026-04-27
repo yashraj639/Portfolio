@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/components/navbar";
 import { Typewriter } from "@/components/typewriter";
 import { Highlight } from "@/components/highlight";
@@ -10,6 +12,7 @@ import {
 } from "react-icons/bi";
 import { SiNextdotjs } from "react-icons/si";
 import { Pill } from "@/components/pill";
+import { successChime } from "@/hooks/use-sound";
 
 const contactLinks = [
   {
@@ -44,7 +47,6 @@ const stackItems = [
   "AI Systems",
 ];
 
-const stackLine = `${stackItems.join(" / ")} / `;
 
 export default function Home() {
   return (
@@ -174,6 +176,7 @@ export default function Home() {
                 <a
                   key={link.label}
                   href={link.href}
+                  onClick={() => successChime()}
                   target={link.href.startsWith("http") ? "_blank" : undefined}
                   rel={link.href.startsWith("http") ? "noreferrer" : undefined}
                   download={link.label === "Resume" ? true : undefined}

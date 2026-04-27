@@ -8,21 +8,43 @@ export function getAudioContext(): AudioContext {
   return audioContext;
 }
 
-export async function decodeAudioData(dataUri: string): Promise<AudioBuffer> {
-  const cached = bufferCache.get(dataUri);
+export async function decodeAudioData(dataUriOrUrl: string): Promise<AudioBuffer> {
+  const cached = bufferCache.get(dataUriOrUrl);
   if (cached) return cached;
 
   const ctx = getAudioContext();
-  const base64 = dataUri.split(",")[1];
-  const binaryString = atob(base64);
-  const bytes = new Uint8Array(binaryString.length);
-  for (let i = 0; i < binaryString.length; i++) {
-    bytes[i] = binaryString.charCodeAt(i);
+  let arrayBuffer: ArrayBuffer;
+
+  if (dataUriOrUrl.startsWith("data:")) {
+    const base64 = dataUriOrUrl.split(",")[1];
+    const binaryString = atob(base64);
+    const bytes = new Uint8Array(binaryString.length);
+    for (let i = 0; i < binaryString.length; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+    arrayBuffer = bytes.buffer;
+  } else {
+    try {
+      const response = await fetch(dataUriOrUrl);
+      if (!response.ok) {
+        console.error(`Failed to fetch audio data from ${dataUriOrUrl}`);
+        return null as any; // Return null if fetch fails
+      }
+      arrayBuffer = await response.arrayBuffer();
+    } catch (err) {
+      console.error(`Error fetching audio: ${dataUriOrUrl}`, err);
+      return null as any;
+    }
   }
 
-  const audioBuffer = await ctx.decodeAudioData(bytes.buffer.slice(0));
-  bufferCache.set(dataUri, audioBuffer);
-  return audioBuffer;
+  try {
+    const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
+    bufferCache.set(dataUriOrUrl, audioBuffer);
+    return audioBuffer;
+  } catch (err) {
+    console.error(`Error decoding audio: ${dataUriOrUrl}`, err);
+    return null as any;
+  }
 }
 
 export interface PlaySoundOptions {
