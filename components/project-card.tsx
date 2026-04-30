@@ -2,7 +2,6 @@
 
 import { MoveUpRight } from "lucide-react";
 import { motion } from "motion/react";
-import { successChime } from "@/hooks/use-sound";
 
 export interface Project {
   title: string;
@@ -62,7 +61,6 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              onClick={() => successChime()}
               className="inline-flex items-center gap-1.5 transition-colors hover:text-(--foreground)"
             >
               demo
@@ -77,7 +75,6 @@ export function ProjectCard({ project }: { project: Project }) {
               href={project.githubUrl}
               target="_blank"
               rel="noreferrer"
-              onClick={() => successChime()}
               className="inline-flex items-center gap-1.5 transition-colors hover:text-(--foreground)"
             >
               GitHub
