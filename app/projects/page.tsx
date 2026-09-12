@@ -4,6 +4,24 @@ import { ProjectsList } from "./projects-list";
 
 const projects: Project[] = [
   {
+    title: "Snap-Form — OpenLabs Solutions",
+    date: "2026",
+    description:
+      "Fullstack AI-powered form builder built in a Turborepo monorepo during my internship at OpenLabs. Shipped 21 merged PRs covering an OpenRouter AI generation pipeline, a form builder Redux slice with undo/redo state history, Zod-validated REST APIs, and core monorepo packages (@repo/db, @repo/types).",
+    tags: [
+      "Turborepo",
+      "Next.js",
+      "TypeScript",
+      "Redux Toolkit",
+      "Prisma",
+      "PostgreSQL",
+      "OpenRouter",
+    ],
+    githubUrl:
+      "https://github.com/Openlabsops/Snap-form/pulls?q=is:pr+is:merged+author:yashraj639",
+    githubLabel: "21 Merged PRs",
+  },
+  {
     title: "Zeno Bank",
     date: "2026",
     description:

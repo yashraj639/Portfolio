@@ -10,6 +10,7 @@ export interface Project {
   tags: string[];
   liveUrl?: string;
   githubUrl?: string;
+  githubLabel?: string;
 }
 
 const item = {
@@ -77,7 +78,7 @@ export function ProjectCard({ project }: { project: Project }) {
               rel="noreferrer"
               className="inline-flex items-center gap-1.5 transition-colors hover:text-(--foreground)"
             >
-              GitHub
+              {project.githubLabel || "GitHub"}
               <span aria-hidden="true">
                 <MoveUpRight size={12} />
               </span>
