@@ -18,7 +18,7 @@ export function Navbar() {
 
   return (
     <motion.nav className="fixed left-0 right-0 top-0 z-50 flex items-center justify-center px-4 py-4">
-      <div className="nav-shell flex w-full max-w-[700px] items-center justify-between rounded-none border-b px-0 py-0 sm:rounded-none sm:border-x-0 sm:border-t-0">
+      <div className="nav-shell flex w-full max-w-175 items-center justify-between rounded-none border-b px-0 py-0 sm:rounded-none sm:border-x-0 sm:border-t-0">
         <Link
           href="/"
           className="px-2 py-3 font-(family-name:--font-funnel) text-sm font-medium tracking-tight text-(--foreground)"

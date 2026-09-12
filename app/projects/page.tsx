@@ -82,7 +82,7 @@ export default function ProjectsPage() {
     <div className="site-shell min-h-screen">
       <Navbar />
       <div className="px-3 pb-20 pt-28 sm:px-8 sm:pt-32">
-        <div className="mx-auto max-w-[700px]">
+        <div className="mx-auto max-w-175">
           <ProjectsList projects={projects} />
         </div>
       </div>

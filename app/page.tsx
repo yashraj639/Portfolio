@@ -22,7 +22,7 @@ import { Pill } from "@/components/pill";
 const contactLinks = [
   {
     label: "Resume",
-    href: "/Yashraj-Yadav-Resume.pdf",
+    href: "/Yashraj-resume.pdf",
     value: "Download PDF",
   },
   {
@@ -60,7 +60,7 @@ export default function Home() {
     <div id="top" className="site-shell min-h-screen">
       <Navbar />
       <div className="px-6 py-16 pt-28 sm:px-8 sm:py-24 sm:pt-32">
-        <div className="mx-auto max-w-[700px]">
+        <div className="mx-auto max-w-175">
           <section className="space-y-6">
             <div className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-4 sm:flex sm:items-center sm:gap-8 md:gap-10">
               <div className="w-fit shrink-0 rounded-[1.1rem] border border-(--line) bg-(--surface) p-2 sm:rounded-[1.75rem] sm:p-2.5">
